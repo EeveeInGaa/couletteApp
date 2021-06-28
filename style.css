@@ -1,0 +1,124 @@
+/* general styling */
+
+*,
+*:before,
+*:after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+html {
+  font-family: "Spartan", sans-serif;
+  font-size: 15px;
+}
+
+body {
+  --main-color: #d8d1ff;
+  --second-color: #6da6c5;
+  --outline-color: firebrick;
+  --button-color: #fbfbff;
+  --button-outline-color: #968d92;
+  --button-hover-color: #c9bdc3;
+}
+
+_body * {
+  outline: 0.15rem solid var(--outline-color);
+}
+
+::selection {
+  background-color: var(--button-color);
+}
+
+body {
+  background-color: var(--button-color);
+}
+
+/* specific styling */
+
+header {
+  background-color: var(--main-color);
+  padding: 2rem;
+  border-bottom: 0.3rem solid var(--second-color);
+}
+
+header * + * {
+  margin: 2rem 1rem 2rem 0rem;
+}
+
+h1,
+p {
+  margin: 0;
+  display: inline-block;
+}
+
+p > small {
+  margin-left: 1rem;
+}
+
+main {
+  margin-top: 2rem;
+  margin-right: 2rem;
+  padding-left: 2rem;
+}
+
+main * + * {
+  margin-top: 1.5rem;
+  padding: 0.5rem;
+}
+
+/* button styling */
+
+.genColor,
+.saveColor,
+.delColor {
+  background-color: var(--button-color);
+  border: 0.2rem solid var(--button-outline-color);
+  border-radius: 0.5rem;
+  padding: 0.3rem 0.6rem;
+}
+
+.genColor:hover,
+.saveColor:hover,
+.delColor:hover {
+  background-color: var(--button-hover-color);
+}
+
+.genColor:active,
+.saveColor:active,
+.delColor:active {
+  background-color: var(--button-outline-color);
+}
+
+.colorName {
+  border: 0.2rem solid var(--button-outline-color);
+  border-radius: 0.5rem;
+  padding: 0.5rem 1rem;
+}
+
+/* list styling */
+
+.color1 {
+  background-color: #90ddf0;
+  border-radius: 1rem;
+  padding: 0.5rem;
+}
+
+.color2 {
+  background-color: #454ade;
+  border-radius: 1rem;
+}
+
+.color3 {
+  background-color: #b14aed;
+  border-radius: 1rem;
+}
+
+.color4 {
+  background-color: #e39ec1;
+  border-radius: 1rem;
+}
+
+.color5 {
+  background-color: #faa613;
+  border-radius: 1rem;
+}
