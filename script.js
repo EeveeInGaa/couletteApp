@@ -1,14 +1,14 @@
 console.log("Welcome to Coulette!");
 
 function generateNewHeaderColor() {
+  let color = "salmon";
   let header = document.querySelector("header");
-
   let bgColor = header.style.backgroundColor;
 
-  if (bgColor === "salmon") {
+  if (bgColor === color) {
     bgColor = "transparent";
   } else {
-    bgColor = "salmon";
+    bgColor = color;
   }
 
   header.style.backgroundColor = bgColor;
