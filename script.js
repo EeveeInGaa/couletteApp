@@ -12,6 +12,9 @@ function generateNewHeaderColor() {
   header.style.backgroundColor = color;
 }
 
+//initially chance header color
+generateNewHeaderColor();
+
 // search/find 'generate color' button
 let generateColorButton = document.querySelector("#genColor");
 generateColorButton.addEventListener("click", generateNewHeaderColor);

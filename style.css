@@ -13,7 +13,6 @@ html {
 }
 
 body {
-  --main-color: #d8d1ff;
   --second-color: #6da6c5;
   --outline-color: firebrick;
   --button-color: #fbfbff;
@@ -36,7 +35,6 @@ body {
 /* specific styling */
 
 header {
-  background-color: var(--main-color);
   padding: 2rem;
   border-bottom: 0.3rem solid var(--second-color);
 }
