@@ -1,9 +1,10 @@
 console.log("Welcome to Coulette!");
 
+let globalColor = "null";
+let color = randomHexColor();
+
 //generate random new color for the header
 function generateNewHeaderColor() {
-  const color = randomHexColor();
-
   // set hex Name as text of the paragraph
   const hexText = document.querySelector("#hexColorName");
   hexText.textContent = color;
@@ -18,6 +19,25 @@ generateNewHeaderColor();
 // search/find 'generate color' button
 let generateColorButton = document.querySelector("#genColor");
 generateColorButton.addEventListener("click", generateNewHeaderColor);
+
+//search/find 'save color' button
+const saveColorButton = document.querySelector("#saveColor");
+saveColorButton.addEventListener("click", saveNewHeaderColor);
+
+function saveNewHeaderColor() {
+  //Zugriff auf Liste der Farben
+  const colorList = document.querySelector("#colors");
+
+  //element erzeugen und text einfügen
+  const newColorInList = document.createElement("li");
+  const textInList = document.createTextNode(color);
+  newColorInList.appendChild(textInList);
+
+  //setze hintergrundfarbe in neue liste und füge es in listenelemnt als kind ein
+  newColorInList.style.backgroundColor = generateNewHeaderColor;
+
+  colorList.appendChild(newColorInList);
+}
 
 // :::::::: provided code ::::::::
 
@@ -51,10 +71,3 @@ function randomHexColor() {
 
   return ("#" + red + green + blue).toUpperCase();
 }
-
-/*function saveNewListItems() {}
-
-const saveColor = document.querySelector(".saveColor");
-if (saveColor) {
-  saveButton.saveColor.addEventListener("click");
-}*/
