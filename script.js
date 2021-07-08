@@ -1,6 +1,21 @@
 console.log("Welcome to Coulette!");
 
-//tabula rasa
+let currentColor = randomHexColor();
+
+const generateButton = document.querySelector("#generateColor");
+generateButton.addEventListener("click", generateColor);
+
+//generate new header color and save hex value
+function generateColor() {
+  const generatedColor = randomHexColor();
+
+  const header = document.querySelector("header");
+  header.style.backgroundColor = generatedColor;
+
+  const colorValueInHeader = document.querySelector("#hexColorName");
+  colorValueInHeader.innerText = generatedColor;
+}
+generateColor();
 
 // :::::::: provided code ::::::::
 
