@@ -42,11 +42,41 @@ function saveColor() {
   colorArr.push(currentColor);
 
   saveButtonStatus();
+
+  //delete button next to color
+  const deleteButton = document.createElement("button");
+  deleteButton.innerText = "delete";
+  newListItem.appendChild(deleteButton);
+
+  //newListItem.setAttribute("data-color", currentColor);
+
+  newListItem.couletteColor = currentColor;
+
+  deleteButton.addEventListener("click", deleteColor);
+
+  deleteButton.style.marginLeft = "1rem";
 }
 
 function saveButtonStatus() {
   const saveButton = document.querySelector("#saveColor");
   saveButton.disabled = colorArr.includes(currentColor);
+}
+
+function deleteColor(e) {
+  const listItem = e.target.parentElement;
+
+  const colorToDelete = listItem.couletteColor;
+  const index = colorArr.indexOf(colorToDelete);
+  console.log("colorToDelete: " + colorToDelete);
+  console.log("colors vor löschen:" + colorArr);
+
+  if (index > -1) {
+    colorArr.splice(index, 1);
+  }
+  console.log("colors nach löschen:" + colorArr);
+  listItem.remove();
+
+  saveButtonStatus();
 }
 
 // :::::::: provided code ::::::::

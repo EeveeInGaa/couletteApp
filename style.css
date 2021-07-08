@@ -87,6 +87,6 @@ main * + * {
 /* list styling */
 
 ul > * {
-  border-radius: 1rem;
+  border-radius: 1.2rem;
   padding: 0.5rem 1rem;
 }
