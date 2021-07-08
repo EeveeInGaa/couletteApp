@@ -1,6 +1,7 @@
 console.log("Welcome to Coulette!");
 
 let currentColor = undefined;
+let colorArr = [];
 
 //generate new header color and save hex value
 const generateButton = document.querySelector("#generateColor");
@@ -14,6 +15,8 @@ function generateColor() {
 
   const colorValueInHeader = document.querySelector("#hexColorName");
   colorValueInHeader.innerText = currentColor;
+
+  saveButtonStatus();
 }
 generateColor();
 
@@ -22,6 +25,11 @@ const saveButton = document.querySelector("#saveColor");
 saveButton.addEventListener("click", saveColor);
 
 function saveColor() {
+  //no duplicate colors (save button disabled)
+  if (colorArr.includes(currentColor)) {
+    return;
+  }
+
   const listOfColors = document.querySelector("#ListOfColors");
   const newListItem = document.createElement("li");
   listOfColors.appendChild(newListItem);
@@ -30,6 +38,15 @@ function saveColor() {
 
   newListItem.style.backgroundColor = currentColor;
   newListItem.appendChild(hexNameInList);
+
+  colorArr.push(currentColor);
+
+  saveButtonStatus();
+}
+
+function saveButtonStatus() {
+  const saveButton = document.querySelector("#saveColor");
+  saveButton.disabled = colorArr.includes(currentColor);
 }
 
 // :::::::: provided code ::::::::

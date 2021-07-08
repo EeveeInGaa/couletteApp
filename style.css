@@ -69,7 +69,7 @@ main * + * {
 .generateColor,
 .saveColor {
   background-color: var(--button-color);
-  border: 0.2rem solid var(--button-outline-color);
+  border: 0.5rem solid var(--button-outline-color);
   border-radius: 0.5rem;
   padding: 0.3rem 0.6rem;
 }
