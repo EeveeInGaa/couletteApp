@@ -45,7 +45,7 @@ function saveColor() {
 
   //delete button next to color
   const deleteButton = document.createElement("button");
-  deleteButton.innerText = "delete";
+  deleteButton.innerText = "x";
   newListItem.appendChild(deleteButton);
 
   //newListItem.setAttribute("data-color", currentColor);
