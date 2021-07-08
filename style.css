@@ -66,57 +66,27 @@ main * + * {
 
 /* button styling */
 
-.genColor,
-.saveColor,
-.delColor {
+.generateColor,
+.saveColor {
   background-color: var(--button-color);
   border: 0.2rem solid var(--button-outline-color);
   border-radius: 0.5rem;
   padding: 0.3rem 0.6rem;
 }
 
-.genColor:hover,
-.saveColor:hover,
-.delColor:hover {
+.generateColor:hover,
+.saveColor:hover {
   background-color: var(--button-hover-color);
 }
 
-.genColor:active,
-.saveColor:active,
-.delColor:active {
+.generateColor:active,
+.saveColor:active {
   background-color: var(--button-outline-color);
-}
-
-.colorName {
-  border: 0.2rem solid var(--button-outline-color);
-  border-radius: 0.5rem;
-  padding: 0.5rem 1rem;
 }
 
 /* list styling */
 
-.color1 {
-  background-color: #90ddf0;
+ul > * {
   border-radius: 1rem;
-  padding: 0.5rem;
-}
-
-.color2 {
-  background-color: #454ade;
-  border-radius: 1rem;
-}
-
-.color3 {
-  background-color: #b14aed;
-  border-radius: 1rem;
-}
-
-.color4 {
-  background-color: #e39ec1;
-  border-radius: 1rem;
-}
-
-.color5 {
-  background-color: #faa613;
-  border-radius: 1rem;
+  padding: 0.5rem 1rem;
 }

@@ -1,21 +1,36 @@
 console.log("Welcome to Coulette!");
 
-let currentColor = randomHexColor();
+let currentColor = undefined;
 
+//generate new header color and save hex value
 const generateButton = document.querySelector("#generateColor");
 generateButton.addEventListener("click", generateColor);
 
-//generate new header color and save hex value
 function generateColor() {
-  const generatedColor = randomHexColor();
+  currentColor = randomHexColor();
 
   const header = document.querySelector("header");
-  header.style.backgroundColor = generatedColor;
+  header.style.backgroundColor = currentColor;
 
   const colorValueInHeader = document.querySelector("#hexColorName");
-  colorValueInHeader.innerText = generatedColor;
+  colorValueInHeader.innerText = currentColor;
 }
 generateColor();
+
+//save header color to list
+const saveButton = document.querySelector("#saveColor");
+saveButton.addEventListener("click", saveColor);
+
+function saveColor() {
+  const listOfColors = document.querySelector("#ListOfColors");
+  const newListItem = document.createElement("li");
+  listOfColors.appendChild(newListItem);
+
+  const hexNameInList = document.createTextNode(currentColor);
+
+  newListItem.style.backgroundColor = currentColor;
+  newListItem.appendChild(hexNameInList);
+}
 
 // :::::::: provided code ::::::::
 
