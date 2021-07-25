@@ -79,6 +79,24 @@ function deleteColor(e) {
   saveButtonStatus();
 }
 
+const storage = "colorArr";
+
+function saveColorsLocal() {
+  const colorsJson = JSON.stringify(colorArr);
+  localStorage.setItem(storage, colorsJson);
+}
+
+function readLocalColors() {
+  const getColors = localStorage.getItem(storage);
+  if (getColors !== null) {
+    const colorsFromArr = JSON.parse(getColors);
+    colorsFromArr.forEach((color) => {
+      saveColor(color);
+      colorArr.push(color);
+    });
+  }
+}
+
 // :::::::: provided code ::::::::
 
 /**
