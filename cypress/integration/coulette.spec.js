@@ -20,4 +20,14 @@ describe("Coulette App", () => {
     cy.get("[data-cy='delete-button']").should("exist");
     cy.get("[data-cy='save-color-btn']").should("be.disabled");
   });
+
+  //delete colors from list
+  it("should delete colors from list", () => {
+    cy.get("[data-cy='save-color-btn']").click();
+    cy.get("[data-cy='color-list']").should("have.length", 1);
+    cy.get("[data-cy='delete-button']").should("exist");
+
+    cy.get("[data-cy='delete-button']").click();
+    cy.get("[data-cy='delete-button']").should("not.exist");
+  });
 });
