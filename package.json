@@ -1,0 +1,26 @@
+{
+  "name": "coulette",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "serve": "serve ./src",
+    "e2e": "cypress open",
+    "e2e:ci": "cypress run"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/EeveeInGaa/couletteApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/EeveeInGaa/couletteApp/issues"
+  },
+  "homepage": "https://github.com/EeveeInGaa/couletteApp#readme",
+  "devDependencies": {
+    "cypress": "^8.0.0",
+    "serve": "^12.0.0"
+  }
+}
