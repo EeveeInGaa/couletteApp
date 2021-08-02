@@ -56,6 +56,8 @@ function saveColor() {
   deleteButton.addEventListener("click", deleteColor);
 
   deleteButton.style.marginLeft = "1rem";
+
+  saveColorsLocal();
 }
 
 function saveButtonStatus() {
@@ -78,6 +80,7 @@ function deleteColor(e) {
   listItem.remove();
 
   saveButtonStatus();
+  saveColorsLocal();
 }
 
 const storage = "colorArr";
@@ -87,16 +90,19 @@ function saveColorsLocal() {
   localStorage.setItem(storage, colorsJson);
 }
 
+// --need to fix!--
 function readLocalColors() {
   const getColors = localStorage.getItem(storage);
   if (getColors !== null) {
-    const colorsFromArr = JSON.parse(getColors);
-    colorsFromArr.forEach((color) => {
+    const parseColors = JSON.parse(getColors);
+    parseColors.forEach((color) => {
       saveColor(color);
       colorArr.push(color);
     });
   }
 }
+
+readLocalColors();
 
 // :::::::: provided code ::::::::
 
